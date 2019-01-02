@@ -1,28 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const App = () => {
+  // "todos" name of our state
+  // "setTodos" method we use to update state
+  // use const [] for array destructuring
+  /* 
+  ** useState is the hook to access lifecycle methods
+  ** what we pass into the param is the default state 
+  ** of the first param in array
+  */
+  const [todos, setTodos] = useState([
+    { text: "Learn about React" },
+    { text: "Meet for networking" },
+    { text: "Build react hook todo app" }
+  ]);
+
+
+
 }
 
 export default App;
