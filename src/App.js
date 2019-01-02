@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Todo from './Todo';
+import TodoForm from './TodoForm';
 import './App.css';
 
 const App = () => {
@@ -17,6 +18,11 @@ const App = () => {
     { text: "Build react hook todo app" }
   ]);
 
+  const addTodo = text => {
+    const newTodos = [...todos, { text }];
+    setTodos(newTodos)
+  }
+
   return (
     <div className="app">
       <div className="todo-list">
@@ -28,6 +34,7 @@ const App = () => {
           />
         ))}
       </div>
+      <TodoForm addTodo={addTodo} />
     </div>
   )
 
