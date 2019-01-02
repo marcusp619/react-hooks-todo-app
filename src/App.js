@@ -13,14 +13,29 @@ const App = () => {
   ** of the first param in array
   */
   const [todos, setTodos] = useState([
-    { text: "Learn about React" },
-    { text: "Meet for networking" },
-    { text: "Build react hook todo app" }
+    {
+      text: "Learn about React",
+      isCompleted: false,
+    },
+    {
+      text: "Meet for networking",
+      isCompleted: false,
+    },
+    {
+      text: "Build react hook todo app",
+      isCompleted: false,
+    }
   ]);
 
   const addTodo = text => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos)
+  }
+
+  const completeTodo = index => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = true;
+    setTodos(newTodos);
   }
 
   return (
@@ -31,6 +46,7 @@ const App = () => {
             key={index}
             index={index}
             todo={todo}
+            completeTodo={completeTodo}
           />
         ))}
       </div>
